@@ -13,10 +13,9 @@ mongoose
   .catch((e) => {
     console.log(e);
   });
-
+console.log("New change ");
 function RunServer() {
   app.listen(Config.port, () => {
     console.log("Listening port ", Config.port);
   });
-
 }
