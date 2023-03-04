@@ -3,7 +3,7 @@ const { CheckVisit } = require("../Controller/Visit");
 
 const router = require("express").Router();
 
-router.get("/confess", Posting);
+router.post("/confess", Posting);
 
 router.get("/visit", CheckVisit);
 

@@ -19,6 +19,8 @@ function RunServer() {
     console.log("Listening port ", Config.port);
   });
 
-  app.use(bodyParser.urlencoded({ extended: false }));
+//   
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(express.json())
   app.use(route);
 }
