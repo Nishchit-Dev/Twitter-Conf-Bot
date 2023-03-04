@@ -3,7 +3,7 @@ const route = require("./Routes/Routes");
 const Config = require("./tempEnv").Config;
 const app = express();
 const mongoose = require("mongoose");
-app.use(route);
+const bodyParser = require("body-parser");
 
 mongoose
   .connect(Config.MongoDB)
@@ -13,9 +13,12 @@ mongoose
   .catch((e) => {
     console.log(e);
   });
-console.log("New change ");
+
 function RunServer() {
   app.listen(Config.port, () => {
     console.log("Listening port ", Config.port);
   });
+
+  app.use(bodyParser.urlencoded({ extended: false }));
+  app.use(route);
 }
